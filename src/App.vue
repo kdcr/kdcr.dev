@@ -1,7 +1,8 @@
 <script setup lang="ts">
   import { ref } from 'vue'
 
-  import projectsImage from '@/assets/images/page/screenshot.png'
+  import projectsImage from '@/assets/images/page/code.png'
+  import photoImage from '@/assets/images/page/photo.jpg'
   import CardContainer from './components/layout/CardContainer.vue'
   import { SectionType } from './model/SectionType'
   import ProjectsPage from './components/pages/ProjectsPage.vue'
@@ -11,7 +12,7 @@
   const sections: SectionType[] = [
     { title: 'Projects', image: projectsImage, content: ProjectsPage },
     { title: 'About myself', image: '', content: MyselfPage },
-    { title: 'Photography', image: '', content: PhotosPage },
+    { title: 'Photography', image: photoImage, content: PhotosPage },
   ]
 
   const selectedCard = ref(-1)
@@ -29,6 +30,7 @@
       :section="section"
       :index="index"
       :selected="selectedCard"
+      :skew-background="index === 0"
       :on-click="handleCardClick"
     />
   </div>

@@ -6,6 +6,7 @@
     section: SectionType
     index: number
     selected: number
+    skewBackground: boolean
     onClick: (index: number) => void
   }>()
 </script>
@@ -17,6 +18,7 @@
     :class="{
       selected: selected === index,
       nonSelected: ![index, -1].includes(selected),
+      skewedImage: skewBackground,
     }"
   >
     <div
@@ -43,19 +45,16 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    transition: all 500ms;
-    box-shadow: 1px 0px 8px white, 1px 0px 8px white;
+    transition: all 1s;
+    box-shadow: 1px 0px 8px var(--color), 1px 0px 8px var(--color);
     &::before {
       content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -30%;
-      left: -80%;
       z-index: -1;
-      transform: rotate(30deg) skew(1deg, -20deg);
+      position: absolute;
+      width: 100%;
+      height: 100%;
       background-image: var(--image);
-      transition: all 500ms;
+      transition: all 1s;
     }
 
     &:hover {
@@ -80,8 +79,8 @@
     height: 20px;
     width: 20px;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 1em;
+    left: 1.5em;
     cursor: pointer;
   }
 
@@ -91,11 +90,12 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    transition: all 500ms;
+    transition: all 1s;
 
     & > .content {
       height: 0;
-      transition: all 500ms;
+      width: 0;
+      transition: all 1000ms;
     }
   }
 
@@ -104,17 +104,34 @@
     display: flex;
     align-items: center;
     height: 100vh;
-    transition: all 500ms;
+    transition: all 1s;
   }
 
   .activeContentContainer {
     justify-content: start;
     & > .title {
-      height: 1em !important;
+      height: 4em !important;
+      align-items: flex-end;
+      cursor: default;
     }
 
     & > .content {
-      height: calc(100vh - 1em);
+      background-color: rgba(255, 255, 255, 0.2);
+      height: calc(100vh - 6em);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 8px;
+      width: calc(100vw - 5em);
+    }
+  }
+
+  .skewedImage {
+    &::before {
+      width: 200% !important;
+      height: 200% !important;
+      top: -30%;
+      left: -80%;
+      transform: rotate(30deg) skew(1deg, -20deg);
     }
   }
 </style>

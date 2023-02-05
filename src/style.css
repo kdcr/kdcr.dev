@@ -1,10 +1,12 @@
 :root {
+  --color: rgb(230 230 230);
+
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgb(255 255 255 / 87%);
+  color: var(--color);
   background-color: #211f2d;
   font-synthesis: none;
   text-rendering: optimizelegibility;
@@ -34,19 +36,4 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #fff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
