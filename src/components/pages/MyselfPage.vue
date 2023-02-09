@@ -9,9 +9,9 @@
     <div>
       <h3>Hi!</h3>
       <span>
-        I'm Kevin, and i want to welcome you into my personal webpage, for now
-        it's a work in progress, but I will post here new photos I take and the
-        projects I participate in.
+        I'm Kevin, and I welcome you to my personal webpage, right now is a work
+        in progress, but I will post here new photos I take and the projects I
+        participate in.
       </span>
       <br />
       <span>
