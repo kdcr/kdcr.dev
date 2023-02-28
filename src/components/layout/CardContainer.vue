@@ -25,8 +25,8 @@
       class="contentContainer"
       :class="{ activeContentContainer: selected === index }"
     >
-      <div class="title" @click="onClick(index)">
-        {{ section.title }}
+      <div class="title">
+        <span @click="onClick(index)">{{ section.title }}</span>
       </div>
       <component :is="section.content" class="content"></component>
     </div>
@@ -59,7 +59,7 @@
 
     &:hover {
       width: 500%;
-      & > .contentContainer > .title {
+      & > .contentContainer > .title > span {
         text-shadow: 5px 5px 6px black, -5px -5px 6px black, 5px -5px 6px black,
           -5px 5px 6px black;
       }
@@ -100,11 +100,16 @@
   }
 
   .title {
-    cursor: pointer;
     display: flex;
     align-items: center;
-    height: 100vh;
     transition: all 1s;
+    height: 100vh;
+    & > span {
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
   }
 
   .activeContentContainer {
