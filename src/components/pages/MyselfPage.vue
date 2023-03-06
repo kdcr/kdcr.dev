@@ -37,7 +37,7 @@
         ><img class="logo" :src="githubLogo"
       /></a>
       <a
-        href="https://www.instagram.com/kdcr97/"
+        href="https://www.instagram.com/kevin__dcr/"
         target="_blank"
         rel="noopener noreferrer"
         ><img class="logo" :src="instagramLogo"
